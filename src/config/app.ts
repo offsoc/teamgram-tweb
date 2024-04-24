@@ -11,7 +11,7 @@
 
 import type {TrueDcId} from '../types';
 
-export const MAIN_DOMAINS = ['web.telegram.org', 'webk.telegram.org'];
+export const MAIN_DOMAINS = ['web.teamgram.net'];
 export const DEFAULT_BACKGROUND_SLUG = 'pattern';
 
 const threads = Math.min(4, navigator.hardwareConcurrency ?? 4);
@@ -26,7 +26,8 @@ const App = {
   langPack: 'webk',
   langPackCode: 'en',
   domains: MAIN_DOMAINS,
-  baseDcId: 2 as TrueDcId,
+  // baseDcId: 2 as TrueDcId,
+  baseDcId: 1 as TrueDcId,
   isMainDomain: MAIN_DOMAINS.includes(location.hostname),
   suffix: 'K',
   threads,

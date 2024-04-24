@@ -245,7 +245,7 @@ export class AppSidebarLeft extends SidebarSlider {
           sessionStorage.set({kz_version: 'Z'}),
           sessionStorage.delete('tgme_sync')
         ]).then(() => {
-          location.href = 'https://web.telegram.org/a/';
+          location.href = 'https://web.teamgram.net/a/';
         });
       },
       verify: () => App.isMainDomain
@@ -254,7 +254,7 @@ export class AppSidebarLeft extends SidebarSlider {
       text: 'ChatList.Menu.SwitchTo.Webogram',
       onClick: () => {
         sessionStorage.delete('tgme_sync').then(() => {
-          location.href = 'https://web.telegram.org/?legacy=1';
+          location.href = 'https://web.teamgram.net/?legacy=1';
         });
       },
       verify: () => App.isMainDomain

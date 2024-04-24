@@ -47,7 +47,7 @@ export function constructTelegramWebSocketUrl(dcId: DcId, connectionType: Connec
 
   const suffix = getTelegramConnectionSuffix(connectionType);
   const path = connectionType !== 'client' ? 'apiws' + TEST_SUFFIX + (premium ? PREMIUM_SUFFIX : '') : ('apiws' + TEST_SUFFIX);
-  const chosenServer = `wss://${App.suffix.toLowerCase()}ws${dcId}${suffix}.web.telegram.org/${path}`;
+  const chosenServer = `wss://web.teamgram.net/${path}`;
 
   return chosenServer;
 }
@@ -57,16 +57,18 @@ export class DcConfigurator {
 
   private dcOptions = Modes.test ?
     [
-      {id: 1, host: '149.154.175.10',  port: 80},
-      {id: 2, host: '149.154.167.40',  port: 80},
-      {id: 3, host: '149.154.175.117', port: 80}
+      {id: 1, host: '43.155.11.190',  port: 8081},
+      // {id: 1, host: '149.154.175.10',  port: 80},
+      // {id: 2, host: '149.154.167.40',  port: 80},
+      // {id: 3, host: '149.154.175.117', port: 80}
     ] :
     [
-      {id: 1, host: '149.154.175.50',  port: 80},
-      {id: 2, host: '149.154.167.50',  port: 80},
-      {id: 3, host: '149.154.175.100', port: 80},
-      {id: 4, host: '149.154.167.91',  port: 80},
-      {id: 5, host: '149.154.171.5',   port: 80}
+      {id: 1, host: '43.155.11.190',  port: 8081},
+      // {id: 1, host: '149.154.175.50',  port: 80},
+      // {id: 2, host: '149.154.167.50',  port: 80},
+      // {id: 3, host: '149.154.175.100', port: 80},
+      // {id: 4, host: '149.154.167.91',  port: 80},
+      // {id: 5, host: '149.154.171.5',   port: 80}
     ];
 
   public chosenServers: Servers = {} as any;
@@ -101,7 +103,7 @@ export class DcConfigurator {
       const suffix = getTelegramConnectionSuffix(connectionType);
       const subdomain = this.sslSubdomains[dcId - 1] + suffix;
       const path = Modes.test ? 'apiw_test1' : 'apiw1';
-      chosenServer = 'https://' + subdomain + '.web.telegram.org/' + path;
+      chosenServer = 'https://.web.teamgram.net/' + path;
     } else {
       for(const dcOption of this.dcOptions) {
         if(dcOption.id === dcId) {
