@@ -57,13 +57,13 @@ export class DcConfigurator {
 
   private dcOptions = Modes.test ?
     [
-      {id: 1, host: '43.155.11.190',  port: 8081},
+      {id: 1, host: '43.155.11.190',  port: 8081}
       // {id: 1, host: '149.154.175.10',  port: 80},
       // {id: 2, host: '149.154.167.40',  port: 80},
       // {id: 3, host: '149.154.175.117', port: 80}
     ] :
     [
-      {id: 1, host: '43.155.11.190',  port: 8081},
+      {id: 1, host: '43.155.11.190',  port: 8081}
       // {id: 1, host: '149.154.175.50',  port: 80},
       // {id: 2, host: '149.154.167.50',  port: 80},
       // {id: 3, host: '149.154.175.100', port: 80},
